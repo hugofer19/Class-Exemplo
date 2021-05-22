@@ -1,5 +1,4 @@
 import time
-
 class Carro:
     def __init__(self, temperatura, nivel_oleo, bateria):
         self.temperatura = temperatura
