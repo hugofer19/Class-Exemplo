@@ -1,3 +1,6 @@
+from colorama import init
+from colorama.ansi import Fore
+init()
 import time
 class Carro:
     def __init__(self, temperatura, nivel_oleo, bateria):
@@ -6,21 +9,22 @@ class Carro:
         self.bateria = bateria
 
     def Ligar(self):
-        print('A ligar o carro...')
+        from colorama import Fore, Back, Style
+        print(Fore.RED + 'A ligar o carro...')
         time.sleep(2)
-        print('Brummm')
+        print(Fore.GREEN + 'Brummm')
 
     def Informacoes(self):
         time.sleep(1)
-        print('Temperatura = ' + self.temperatura)
-        print('Nível do óleo = ' + self.nivel_oleo)
-        print('Bateria = ' + self.bateria)
+        print(Fore.MAGENTA + 'Temperatura = ' + self.temperatura)
+        print(Fore.MAGENTA + 'Nível do óleo = ' + self.nivel_oleo)
+        print(Fore.MAGENTA +'Bateria = ' + self.bateria)
 
     def Desligar(self):
         time.sleep(2)
-        print('Carro a desligar..')
+        print(Fore.RED +'Carro a desligar..')
 
-carro1 = Carro(input('Qual a temperatura do seu carro?'), input('Qual o nível do óleo do seu carro?'), input('Qual a percentagem de bateria do seu carro?'))
+carro1 = Carro(Fore.BLUE + input('Qual a temperatura do seu carro?'), Fore.BLUE + input('Qual o nível do óleo do seu carro?'), Fore.BLUE + input('Qual a percentagem de bateria do seu carro?'))
 
 carro1.Ligar()
 carro1.Informacoes()
